@@ -1,0 +1,30 @@
+*.py[cod]
+
+# Packages
+*.eggs
+*.egg-info
+
+*.~
+.installed.cfg
+bin
+develop-eggs
+dist
+downloads
+parts
+build
+.ropeproject
+.tox
+__pycache__
+env
+
+.project
+.pydevproject
+.settings
+.idea
+.venv
+.cache
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov
