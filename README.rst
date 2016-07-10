@@ -87,3 +87,12 @@ Now with django-compoundqueryset, you can do:
         p = Paginator(combined_queryset, 10)
 
 You can now iterate over these models in a view, showing the age.
+
+
+Performance
+-----------
+The goal is to beat the naive implementation (load all records into memory and deal with there), but
+we may not beat a RawSQL union all monster. If performance is really important you may need to do that.
+
+If used in a Django Paginator, we will normally do 1 count(*) query per queryset, and then only load the
+required records.
