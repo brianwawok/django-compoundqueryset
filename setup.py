@@ -1,22 +1,18 @@
 # -*- coding: utf-8 -*-
-import sys
 
 from setuptools import setup
-from setuptools.command.test import test as TestCommand
-
-import djcompoundqueryset
-
 
 setup(
     name='django-compoundqueryset',
-    version=djcompoundqueryset.__version__,
-    description='Allows for creation of compound querysets in Django.',
-    url='https://github.com/brianwawok/django-compoundqueryset',
-    maintainer='Brian Wawok',
-    maintainer_email='bwawok@gmail.com',
     packages=[
         'djcompoundqueryset',
     ],
+    version='0.1',
+    description='Allows for creation of compound querysets in Django.',
+    url='https://github.com/brianwawok/django-compoundqueryset',
+    download_url='https://github.com/brianwawok/mypackage/django-compoundqueryset/0.1',
+    maintainer='Brian Wawok',
+    maintainer_email='bwawok@gmail.com',
     install_requires=[
         'setuptools',
         'Django >= 1.8',

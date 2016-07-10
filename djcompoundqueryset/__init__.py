@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-__version__ = '0.1.dev0'
 default_app_config = 'djcompoundqueryset.apps.CompoundQuerySetConfig'
 
 
