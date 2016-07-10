@@ -11,11 +11,9 @@ Especially useful for pagination of said results.
 
 
 
-Django versions supported: 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10
+Django versions supported: 1.8, 1.9, 1.10
 
-Python versions supported: 2.6, 2.7, 3.2, 3.3, 3.4, 3.5
-
-PyPy versions supported: PyPy 2.6, PyPy3 2.4
+Python versions supported: 2.7, 3.3, 3.4, 3.5
 
 
 
@@ -70,7 +68,9 @@ And you want to paginate across them
 
         p = Paginator(combined_queryset, 10)
 
-You will get the error `Merging 'QuerySet' classes must involve the same values in each case.`
+You will get the dreaded error
+
+    Merging 'QuerySet' classes must involve the same values in each case.
 
 Now with django-compoundqueryset, you can do:
 
