@@ -4,6 +4,7 @@
 *.eggs
 *.egg-info
 
+.pypirc
 *.~
 .installed.cfg
 bin

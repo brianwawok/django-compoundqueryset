@@ -2,15 +2,17 @@
 
 from setuptools import setup
 
+VERSION = '0.1.1'
+
 setup(
     name='django-compoundqueryset',
     packages=[
         'djcompoundqueryset',
     ],
-    version='0.1',
+    version=VERSION,
     description='Allows for creation of compound querysets in Django.',
     url='https://github.com/brianwawok/django-compoundqueryset',
-    download_url='https://github.com/brianwawok/mypackage/django-compoundqueryset/0.1',
+    download_url='https://github.com/brianwawok/django-compoundqueryset/' + VERSION,
     maintainer='Brian Wawok',
     maintainer_email='bwawok@gmail.com',
     install_requires=[

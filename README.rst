@@ -1,4 +1,4 @@
-Django-money
+Django-compoundqueryset
 ------------
 
 |PyPi|
@@ -34,7 +34,7 @@ Using `pip`:
 Motivation
 -----------
 
-You could have two different tables with similar fields
+Sometimes you might want to combine two different tables with similar fields and show them to users. For example:
 
 .. code:: python
 
