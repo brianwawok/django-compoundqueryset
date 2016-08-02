@@ -140,3 +140,26 @@ class LoginLogoutTest(TestCase):
                 self.assertEqual((page_num - 5) * 2 + 49, item_2.age)
                 self.assertIsInstance(item_1, SecondModel)
                 self.assertIsInstance(item_2, SecondModel)
+
+    def test_max_item_hint(self):
+        qs_1 = FirstModel.objects.order_by('age').all()
+        qs_2 = SecondModel.objects.order_by('age').all()
+        cqs = CompoundQueryset(qs_1, qs_2, max_items=15)[:15]
+
+        p = Paginator(cqs, 2)
+        self.assertEqual(8, p.num_pages)
+        for page_num in range(1, 8):
+            page = p.page(page_num)
+            self.assertEqual(2, len(page))
+            item_1 = page[0]
+            item_2 = page[1]
+            if page_num <= 5:
+                self.assertEqual(page_num * 2 - 2, item_1.age)
+                self.assertEqual(page_num * 2 - 1, item_2.age)
+                self.assertIsInstance(item_1, FirstModel)
+                self.assertIsInstance(item_2, FirstModel)
+            else:
+                self.assertEqual((page_num - 5) * 2 + 48, item_1.age)
+                self.assertEqual((page_num - 5) * 2 + 49, item_2.age)
+                self.assertIsInstance(item_1, SecondModel)
+                self.assertIsInstance(item_2, SecondModel)

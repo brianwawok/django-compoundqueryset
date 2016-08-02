@@ -82,11 +82,13 @@ Now with django-compoundqueryset, you can do:
 
         qs_1 = FirstModel.objects.order_by('age').all()
         qs_2 = SecondModel.objects.order_by('age').all()
-        combined_queryset = CompoundQueryset(qs_1, qs_2)
+        combined_queryset = CompoundQueryset(qs_1, qs_2, max_items=100)
 
         p = Paginator(combined_queryset, 10)
 
-You can now iterate over these models in a view, showing the age.
+You can now iterate over these models in a view, showing the age. Max_items says you will
+never use more than that many items, so limit the count a queries. Useful if you have
+capped pagination.
 
 
 Performance
