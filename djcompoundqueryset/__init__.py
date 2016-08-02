@@ -26,6 +26,8 @@ class CompoundQueryset:
         if isinstance(given, slice):
             # We have a slice
             target_start = given.start
+            if target_start is None:
+                target_start = 0
             target_stop = given.stop
             for idx, qs in enumerate(self.querysets):
                 qs_count = self.__counts[idx]
